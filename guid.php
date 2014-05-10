@@ -7,9 +7,7 @@
 function guid() {
 	if(function_exists("com_create_guid")) return com_create_guid();
 
-	print rand();
-	print time();
-	$chars = strtoupper(md5(uniqid(rand(),true)));
+	$chars = strtoupper(md5(uniqid(time(),true)));
 	return "{".
 			substr($chars,0,8)."-".
 			substr($chars,8,4)."-".
